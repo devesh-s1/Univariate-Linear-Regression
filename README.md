@@ -16,6 +16,20 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ## Program
 ```
 
+# Program for Multivariate linear regression using the least squares method.
+# Developed by: S.dvesh sharma
+# RegisterNumber:22005350
+import pandas as pd
+from sklearn import linear_model
+data=pd.read_csv("cars1.csv")
+x=data[['Weight','Volume']]
+y=data['CO2']
+regr=linear_model.LinearRegression()
+regr.fit(x,y)
+print('coefficient: ',regr.coef_)
+print('Intercept: ',regr.intercept_)
+predictCO2=regr.predict([[3300,1300]])
+print('Predicted CO2 fot the corresponding weight and volume',predictCO2)
 
 
 
@@ -23,10 +37,8 @@ To implement univariate Linear Regression to fit a straight line using least squ
 
 ```
 ## Output
-</br>
-</br>
-</br>
-</br>
+![univariate](https://user-images.githubusercontent.com/121490523/215452905-55fe7443-ac84-4aa6-8800-31ed32a3ef63.png)
+
 
 ## Result
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares.
